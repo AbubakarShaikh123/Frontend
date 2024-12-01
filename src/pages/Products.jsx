@@ -12,18 +12,18 @@ function Products() {
   const [sortOrder, setSortOrder] = useState('asc'); // 'asc' or 'desc'
 
   // Fetch products
-  useEffect(() => {
-    axios
-      .get(`${backendUrl}/getProducts`, { withCredentials: true })
-      .then((response) => {
-        setProducts(response.data.products || []);
-        setFilteredProducts(response.data.products || []);
-      })
-      .catch((error) => {
-        console.error('Error fetching products:', error);
-        setProducts([]);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`${backendUrl}/getProducts`, { withCredentials: true })
+  //     .then((response) => {
+  //       setProducts(response.data.products || []);
+  //       setFilteredProducts(response.data.products || []);
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching products:', error);
+  //       setProducts([]);
+  //     });
+  // }, []);
 
   // Filter and sort products
   useEffect(() => {

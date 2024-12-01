@@ -16,23 +16,23 @@ function App() {
   // const [password, setPassword] =useState("")
 
 
-  useEffect(() => {
-    axios
-      .get(`${backendUrl}/getProducts`, { withCredentials: true })
-      .then((response) => {
-        // console.log(response.data.products, 'API Response');
-        setProducts(response.data.products || []); // Ensure it's always an array
-      })
-      .catch((error) => {
-        console.error('Error fetching products:', error);
-        setProducts([]); // Set to empty array in case of error
-      });
+  // useEffect(() => {
+  //   axios
+  //     .get(`${backendUrl}/getProducts`, { withCredentials: true })
+  //     .then((response) => {
+  //       // console.log(response.data.products, 'API Response');
+  //       setProducts(response.data.products || []); // Ensure it's always an array
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching products:', error);
+  //       setProducts([]); // Set to empty array in case of error
+  //     });
 
-      if (isLoggedIn) {
-        axios
-      }
+  //     if (isLoggedIn) {
+  //       axios
+  //     }
 
-  }, []);
+  // }, []);
 
   
 

@@ -9,7 +9,7 @@ function Card({ imgurl, price, title, id }) {
 
   return (
     <div 
-      onClick={()=> navigate(`/product/${id}`) }
+      onClick={()=> navigate(`product/${id}`) }
       className="w-[250px] h-[320px] bg-transparent rounded-sm border shadow-md shadow-white cursor-pointer hover:scale-105 transition-all overflow-hidden text-ellipsis">
       <img
         src={imgurl || ''}

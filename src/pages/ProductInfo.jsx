@@ -20,8 +20,9 @@ function ProductInfo() {
 
     useEffect(()=>{
         console.log(product);
+        console.log(id);
         
-        product.map(async (i,index)=>{
+        product.map( (i,index)=>{
             if (i.id === id) {
                  setCurrentProduct(i)
                 console.log(currentProduct,"th");

@@ -38,17 +38,17 @@ function Cart() {
 
   if (cart.length === 0) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-center">
+      <div className="p-10 min-h-screen flex flex-col items-center justify-center bg-gray-100 text-center">
         <img
           src="https://img.freepik.com/free-vector/woman-with-shopping-cart-vector_1308-129957.jpg?t=st=1733061017~exp=1733064617~hmac=6e72824e9f709878675234b242c30a50788e1416167a25c53c94b910f3f99db0&w=360"
           alt="Empty Cart"
-          className="mb-6"
+          className="mb-20"
         />
         <h1 className="text-2xl font-bold text-gray-700 mb-4">Your Cart is Empty!</h1>
         <p className="text-gray-600 mb-8">Browse our collection and add items to your cart.</p>
         <button
           onClick={() => navigate('/products')}
-          className="px-6 py-3 bg-black text-white font-semibold rounded-md hover:bg-white hover:text-black transition-all"
+          className="px-6 py-3 mb-5 bg-black text-white font-semibold rounded-md hover:bg-white hover:text-black transition-all"
         >
           Explore Products
         </button>

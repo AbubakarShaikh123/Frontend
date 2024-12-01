@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
@@ -9,54 +10,70 @@ const Navbar = () => {
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="text-3xl font-semibold tracking-wide text-gray-700">
-          <a href="/">MyShop</a>
+          <Link to="/">MyShop</Link>
         </div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-10">
           <li>
-            <a
-              href="/"
-              className="hover:text-gray-500 transition duration-300 text-lg"
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `text-lg transition duration-300 ${
+                  isActive ? "text-gray-700 font-semibold" : "hover:text-gray-500"
+                }`
+              }
             >
               Home
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a
-              href="/products"
-              className="hover:text-gray-500 transition duration-300 text-lg"
+            <NavLink
+              to="/products"
+              className={({ isActive }) =>
+                `text-lg transition duration-300 ${
+                  isActive ? "text-gray-700 font-semibold" : "hover:text-gray-500"
+                }`
+              }
             >
               Products
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a
-              href="/cart"
-              className="hover:text-gray-500 transition duration-300 text-lg"
+            <NavLink
+              to="/cart"
+              className={({ isActive }) =>
+                `text-lg transition duration-300 ${
+                  isActive ? "text-gray-700 font-semibold" : "hover:text-gray-500"
+                }`
+              }
             >
               Cart
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a
-              href="/about"
-              className="hover:text-gray-500 transition duration-300 text-lg"
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `text-lg transition duration-300 ${
+                  isActive ? "text-gray-700 font-semibold" : "hover:text-gray-500"
+                }`
+              }
             >
               About
-            </a>
+            </NavLink>
           </li>
         </ul>
 
         {/* Cart Icon */}
         <div className="hidden md:block">
-          <a
-            href="/cart"
+          <Link
+            to="/cart"
             className="flex items-center hover:text-gray-500 transition duration-300 text-lg"
           >
             <FaShoppingCart size={22} />
             <span className="ml-2">Cart</span>
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -74,16 +91,56 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <ul className="flex flex-col items-center bg-white text-gray-800 mt-4 py-3 rounded-md md:hidden shadow-md border border-gray-200">
           <li className="py-2 w-full text-center hover:bg-gray-100 transition duration-300">
-            <a href="/">Home</a>
+            <NavLink
+              to="/"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={({ isActive }) =>
+                `block w-full ${
+                  isActive ? "font-semibold text-gray-700" : ""
+                }`
+              }
+            >
+              Home
+            </NavLink>
           </li>
           <li className="py-2 w-full text-center hover:bg-gray-100 transition duration-300">
-            <a href="/products">Products</a>
+            <NavLink
+              to="/products"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={({ isActive }) =>
+                `block w-full ${
+                  isActive ? "font-semibold text-gray-700" : ""
+                }`
+              }
+            >
+              Products
+            </NavLink>
           </li>
           <li className="py-2 w-full text-center hover:bg-gray-100 transition duration-300">
-            <a href="/cart">Cart</a>
+            <NavLink
+              to="/cart"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={({ isActive }) =>
+                `block w-full ${
+                  isActive ? "font-semibold text-gray-700" : ""
+                }`
+              }
+            >
+              Cart
+            </NavLink>
           </li>
           <li className="py-2 w-full text-center hover:bg-gray-100 transition duration-300">
-            <a href="/about">About</a>
+            <NavLink
+              to="/about"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={({ isActive }) =>
+                `block w-full ${
+                  isActive ? "font-semibold text-gray-700" : ""
+                }`
+              }
+            >
+              About
+            </NavLink>
           </li>
         </ul>
       )}

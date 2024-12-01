@@ -23,7 +23,7 @@ function ProductInfo() {
         
         product.map(async (i,index)=>{
             if (i.id === id) {
-                await setCurrentProduct(i)
+                 setCurrentProduct(i)
                 console.log(currentProduct,"th");
                 // console.log(product,"Dead");
                 
@@ -32,7 +32,7 @@ function ProductInfo() {
                 return true
             }
         })
-    },[product, id])
+    },[])
 
     const addToCart = () => {
       const existingItem = cart.find((item) => item.productId === currentProduct.id);
